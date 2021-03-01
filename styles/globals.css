@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Karla:wght@500&display=swap");
 html,
@@ -6,6 +7,7 @@ body {
   margin: 0;
   background: #3f464f;
   font-size: 12px;
+  overflow: hidden;
 }
 
 * {
@@ -42,6 +44,8 @@ body {
           align-items: center;
   width: 100%;
   height: 100%;
+  -webkit-perspective: 800px;
+          perspective: 800px;
 }
 
 .section-grid h1 {
@@ -55,6 +59,7 @@ body {
 
 .section-grid .title {
   text-decoration: underline;
+  display: inline;
 }
 
 .section-grid .subtitle {
@@ -90,5 +95,34 @@ body {
   text-align: center;
   margin-left: 0;
   color: #dbeafe;
+}
+
+.CONTACT .contact-section {
+  margin-left: 10rem;
+}
+
+.CONTACT .contact-section .contact-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-bottom: 1rem;
+}
+
+.CONTACT .contact-section .contact-item h1 {
+  font-size: 4rem;
+  margin: 0;
+  color: #075985;
+}
+
+.CONTACT .contact-section .contact-item h1::before {
+  content: "⠀";
+}
+
+.image {
+  position: absolute;
 }
 /*# sourceMappingURL=globals.css.map */

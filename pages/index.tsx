@@ -1,11 +1,12 @@
 import Head from "next/head";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Particles from "react-particles-js";
 import Contact from "../components/Contact";
 import Projects from "../components/Projects";
 import Resume from "../components/Resume";
 import SideBar from "../components/SideBar";
 import Welcome from "../components/Welcome";
+import gsap from "gsap";
 
 const particleParams = {
   fpsLimit: 60,
@@ -43,6 +44,31 @@ const particleParams = {
 
 export default function Home() {
   const [pressedSection, setPressedSection] = useState<number>(0);
+  const [delayed, setDelayed] = useState<number>(0);
+
+  let prevState = 0;
+
+  let contRef = useRef<HTMLDivElement>(null);
+  let tempRef = useRef<GSAPTween>(null);
+
+  useEffect(() => {
+    tempRef.current = gsap.to(contRef.current, {
+      // y: contRef.current.clientHeight,
+      opacity: 0,
+      duration: 1,
+    });
+
+    const timeout = setTimeout(() => {
+      tempRef.current = gsap.to(contRef.current, {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+      });
+      setDelayed(pressedSection);
+    }, 1000);
+
+    return () => clearTimeout(timeout);
+  }, [pressedSection]);
 
   return (
     <div>
@@ -65,10 +91,15 @@ export default function Home() {
             }}
             params={particleParams as any}
           />
-          {pressedSection === 0 && <Welcome />}
-          {pressedSection === 1 && <Projects />}
-          {pressedSection === 2 && <Contact />}
-          {pressedSection === 3 && <Resume />}
+          <div
+            ref={contRef}
+            style={{ width: "100%", height: "100%" }}
+          >
+            {delayed === 0 && <Welcome />}
+            {delayed === 1 && <Projects />}
+            {delayed === 2 && <Contact />}
+            {delayed === 3 && <Resume />}
+          </div>
         </div>
       </main>
 

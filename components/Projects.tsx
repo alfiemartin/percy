@@ -14,13 +14,13 @@ const Projects = () => {
             <h1>neurify</h1>
           </div>
           <div>
-            <h1>nice and chill</h1>
+            <h1>Tap Flash</h1>
           </div>
           <div>
-            <h1>rdm technology</h1>
+            <h1>Full Stack</h1>
           </div>
           <div>
-            <h1>tap flash</h1>
+            <h1>More</h1>
           </div>
         </div>
       </div>

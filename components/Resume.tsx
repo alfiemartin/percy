@@ -6,8 +6,8 @@ const Resume = () => {
       <div className="section-grid">
         <h1 className="title">Résumé</h1>
         <div className="subtitle">
-          {/* <h1>Electronic Engineer.</h1>
-          <h1>Web Developer.</h1> */}
+          <h1>View as pdf.</h1>
+          {/* <h1>Web Developer.</h1> */}
         </div>
       </div>
     </div>
