@@ -55,17 +55,17 @@ export default function Home() {
     tempRef.current = gsap.to(contRef.current, {
       // y: contRef.current.clientHeight,
       opacity: 0,
-      duration: 1,
+      duration: 0.5,
     });
 
     const timeout = setTimeout(() => {
       tempRef.current = gsap.to(contRef.current, {
         y: 0,
         opacity: 1,
-        duration: 1,
+        duration: 0.5,
       });
       setDelayed(pressedSection);
-    }, 1000);
+    }, 500);
 
     return () => clearTimeout(timeout);
   }, [pressedSection]);
