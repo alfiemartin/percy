@@ -60,7 +60,7 @@ export default function Home() {
 
     const timeout = setTimeout(() => {
       tempRef.current = gsap.to(contRef.current, {
-        y: 0,
+        // y: 0,
         opacity: 1,
         duration: 0.5,
       });

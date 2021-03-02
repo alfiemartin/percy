@@ -39,6 +39,8 @@ body {
   display: grid;
   -ms-grid-rows: (1fr)[3];
       grid-template-rows: repeat(3, 1fr);
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -82,10 +84,16 @@ body {
   background: #07598594;
   margin-left: 2rem;
   margin-right: 2rem;
+  margin-top: 10rem;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
+  -ms-grid-row: 3;
+      grid-row-start: 3;
+  grid-column: span 3 / span 3;
+  position: absolute;
+  width: 95%;
   border-radius: 5px;
   border-bottom: 2px solid #075985;
 }
@@ -95,6 +103,36 @@ body {
   text-align: center;
   margin-left: 0;
   color: #dbeafe;
+}
+
+.PROJECTS .subtitle {
+  -ms-grid-row: 2;
+      grid-row-start: 2;
+  grid-column: span 3 / span 3;
+}
+
+.PROJECTS .title {
+  grid-column: span 2 / span 2;
+}
+
+.PROJECTS .grid-reveal {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.PROJECTS .grid-reveal h1 {
+  line-height: normal;
+}
+
+.PROJECTS .grid-reveal a {
+  cursor: pointer;
+}
+
+.PROJECTS .grid-reveal a:hover {
+  text-decoration: underline;
 }
 
 .CONTACT .contact-section {
@@ -120,6 +158,36 @@ body {
 
 .CONTACT .contact-section .contact-item h1::before {
   content: "⠀";
+}
+
+.CONTACT .contact-section {
+  -ms-grid-row: 2;
+      grid-row-start: 2;
+  grid-column: span 3 / span 3;
+}
+
+.CONTACT .title {
+  grid-column: span 2 / span 2;
+}
+
+.WELCOME .subtitle {
+  -ms-grid-row: 2;
+      grid-row-start: 2;
+  grid-column: span 3 / span 3;
+}
+
+.WELCOME .title {
+  grid-column: span 2 / span 2;
+}
+
+.RESUME .subtitle {
+  -ms-grid-row: 2;
+      grid-row-start: 2;
+  grid-column: span 3 / span 3;
+}
+
+.RESUME .title {
+  grid-column: span 2 / span 2;
 }
 
 .image {
