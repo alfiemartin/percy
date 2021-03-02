@@ -52,6 +52,7 @@ const SideBar = ({ setPressedSection }) => {
     <div className={sidebarStyles.sidebar}>
       <div className={sidebarStyles.linkWrapper}>
         <h1
+          className={sidebarStyles.link}
           onMouseOver={() => setHoveredlink(0)}
           onMouseDown={() => setPressedLink(0)}
           onMouseLeave={() => setHoveredlink(-1)}
@@ -60,6 +61,7 @@ const SideBar = ({ setPressedSection }) => {
           Home
         </h1>
         <h1
+          className={sidebarStyles.link}
           onMouseOver={() => setHoveredlink(1)}
           onMouseDown={() => setPressedLink(1)}
           onMouseLeave={() => setHoveredlink(-1)}
@@ -68,6 +70,7 @@ const SideBar = ({ setPressedSection }) => {
           Projects
         </h1>
         <h1
+          className={sidebarStyles.link}
           onMouseOver={() => setHoveredlink(2)}
           onMouseDown={() => setPressedLink(2)}
           onMouseLeave={() => setHoveredlink(-1)}
@@ -76,6 +79,7 @@ const SideBar = ({ setPressedSection }) => {
           Contact
         </h1>
         <h1
+          className={sidebarStyles.link}
           onMouseOver={() => setHoveredlink(3)}
           onMouseDown={() => setPressedLink(3)}
           onMouseLeave={() => setHoveredlink(-1)}
