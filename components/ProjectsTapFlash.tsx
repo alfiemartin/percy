@@ -13,7 +13,7 @@ const ProjectsTapFlash = () => {
       <div className="extra">
         <Link href={"https://www.neurify.co.uk"}>
           <h1>
-            <a>Live Build</a>
+            <a>Live</a>
           </h1>
         </Link>
         <Link href={"https://www.neurify.co.uk"}>

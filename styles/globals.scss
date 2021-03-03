@@ -135,12 +135,19 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-
+    width: 80%;
+    margin: 0 auto;
+    background: #591c87ad;
+    border-radius: 1rem;
+    border-bottom: 2px solid #581c87;
     h1 {
-      font-size: 6rem;
-      color: #075985;
+      font-size: 4rem;
+      color: white;
+      line-height: 6rem;
       cursor: pointer;
       margin-left: 0;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
     }
   }
 }
