@@ -6,8 +6,43 @@ body {
   padding: 0;
   margin: 0;
   background: #3f464f;
-  font-size: 12px;
+  font-size: 11px;
   overflow: hidden;
+}
+
+@media only screen and (min-width: 1500px) {
+  html,
+  body {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  html,
+  body {
+    font-size: 13px;
+  }
+}
+
+@media only screen and (min-width: 2100px) {
+  html,
+  body {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (min-width: 2400px) {
+  html,
+  body {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (min-width: 2700px) {
+  html,
+  body {
+    font-size: 16px;
+  }
 }
 
 * {
@@ -116,12 +151,36 @@ body {
     }
   }
 
+  .stack {
+    position: absolute;
+    // grid-row-start: 1;
+    // grid-column-start: 3;
+    // border: 3px solid #591c87;
+    z-index: 10;
+    border-radius: 0.4rem;
+    padding: 1rem;
+    opacity: 0;
+    margin-left: 10rem;
+    // top: 100px;
+    & > h1 {
+      margin-left: 0rem;
+      margin-right: 4rem;
+      font-size: 3rem;
+      line-height: 2rem;
+      // color: white;
+
+      &::before {
+        content: "• ";
+      }
+    }
+  }
+
   .subtitle {
     grid-row-start: 2;
     grid-column: span 3 / span 3;
 
     h1 {
-      line-height: 2.5rem;
+      line-height: 5rem;
     }
   }
 
@@ -134,20 +193,34 @@ body {
     grid-column: span 3 / span 3;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    width: 80%;
-    margin: 0 auto;
-    background: #591c87ad;
-    border-radius: 1rem;
-    border-bottom: 2px solid #581c87;
+
+    margin-left: 10rem;
+
+    .line {
+      position: absolute;
+      background: #581c87;
+      height: 5px;
+    }
+
+    .view-elements {
+      display: flex;
+      flex-grow: 1;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: flex-end;
+    }
+
     h1 {
-      font-size: 4rem;
-      color: white;
+      font-size: 6rem;
+      text-align: center;
+      color: transparent;
       line-height: 6rem;
       cursor: pointer;
       margin-left: 0;
-      margin-top: 1rem;
-      margin-bottom: 1rem;
+    }
+
+    & > h1 {
+      color: #075985;
     }
   }
 }
@@ -189,7 +262,7 @@ body {
   }
 
   .title {
-    grid-column: span 2 / span 2;
+    grid-column: span 3 / span 3;
   }
 
   .image {

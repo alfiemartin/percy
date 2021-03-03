@@ -13,11 +13,7 @@ const Projects = () => {
   const [revealBodyText, setRevealBodyText] = useState("");
   const [revealLiveLink, setRevealLiveLink] = useState("");
 
-  let projectTitleRef = useRef<HTMLHeadingElement>(null);
-  let projectBodyRef = useRef<HTMLDivElement>(null);
-  let revealTitleRef = useRef<HTMLHeadingElement>(null);
-  let revealBodyRef = useRef<HTMLDivElement>(null);
-  let revealSectionRef = useRef<HTMLDivElement>(null);
+  let navLinkRefs = useRef<Array<HTMLHeadingElement>>([null]);
   let contRef = useRef<HTMLDivElement>(null);
   let tempRef = useRef(null);
 
@@ -25,6 +21,16 @@ const Projects = () => {
     if (index === activeProject) setActiveProject(-1);
     else setActiveProject(index);
   };
+
+  useEffect(() => {
+    navLinkRefs.current.forEach((ref) => {
+      tempRef.current = gsap.to(ref, { color: "#dbeafe" });
+    });
+
+    tempRef.current = gsap.to(navLinkRefs.current[hoveredProject], {
+      color: "#581c87",
+    });
+  }, [hoveredProject]);
 
   return (
     <div className="PROJECTS SECTION">
@@ -38,6 +44,7 @@ const Projects = () => {
               onMouseEnter={() => setHoveredProject(0)}
               onMouseLeave={() => setHoveredProject(-1)}
               onMouseDown={() => handleProjectClick(0)}
+              ref={(el) => (navLinkRefs.current[0] = el)}
             >
               neurify
             </h1>
@@ -47,6 +54,7 @@ const Projects = () => {
               onMouseEnter={() => setHoveredProject(1)}
               onMouseLeave={() => setHoveredProject(-1)}
               onMouseDown={() => handleProjectClick(1)}
+              ref={(el) => (navLinkRefs.current[1] = el)}
             >
               Tap Flash
             </h1>
@@ -56,6 +64,7 @@ const Projects = () => {
               onMouseEnter={() => setHoveredProject(2)}
               onMouseLeave={() => setHoveredProject(-1)}
               onMouseDown={() => handleProjectClick(2)}
+              ref={(el) => (navLinkRefs.current[2] = el)}
             >
               Full Stack
             </h1>
@@ -65,6 +74,7 @@ const Projects = () => {
               onMouseEnter={() => setHoveredProject(3)}
               onMouseLeave={() => setHoveredProject(-1)}
               onMouseDown={() => handleProjectClick(3)}
+              ref={(el) => (navLinkRefs.current[3] = el)}
             >
               More
             </h1>
