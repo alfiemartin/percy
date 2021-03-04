@@ -1,8 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
-import Image from "next/image";
 import gsap from "gsap";
 
-const ProjectsNeurify = () => {
+const ProjectsFS = () => {
   let extraRefs = useRef<Array<HTMLHeadingElement>>([null]);
   let contRef = useRef<HTMLDivElement>(null);
   let tempRef = useRef<GSAPTween>(null);
@@ -76,28 +75,16 @@ const ProjectsNeurify = () => {
     });
   };
 
-  useEffect(() => {
-    console.log("hello");
-    return () => console.log("bye");
-  }, []);
-
   return (
-    <div className="content section-grid neurify">
-      <h1 className="title">neurify</h1>
-      <img
-        src="/neurifylogotrans.png"
-        className="image"
-        width={100}
-        height={100}
-      />
+    <div className="content section-grid">
+      <h1 className="title">Full Stack</h1>
       <div className="stack" ref={stackRef}>
-        <h1>Wordpress</h1>
-        <h1>Elementor</h1>
-        <h1>javascript</h1>
-        <h1>jQuery</h1>
+        <h1>react</h1>
+        <h1>Firebase</h1>
+        <h1>TailwindCSS</h1>
       </div>
       <div className="subtitle" ref={subtitleRef}>
-        <h1>Integrating Technology With Marketing.</h1>
+        <h1>A simple game based on memory.</h1>
       </div>
       <div
         className="extra"
@@ -112,17 +99,24 @@ const ProjectsNeurify = () => {
             onMouseEnter={() => extraLinkIntro(0)}
             onMouseLeave={() => extraLinkOutro(0)}
           >
-            live
+            code
           </h1>
           <h1
             ref={(el) => (extraRefs.current[1] = el)}
+            onMouseEnter={() => extraLinkIntro(1)}
+            onMouseLeave={() => extraLinkOutro(1)}
+          >
+            live
+          </h1>
+          <h1
+            ref={(el) => (extraRefs.current[2] = el)}
             onMouseEnter={() => {
               showStack();
-              extraLinkIntro(1);
+              extraLinkIntro(2);
             }}
             onMouseLeave={() => {
               hideStack();
-              extraLinkOutro(1);
+              extraLinkOutro(2);
             }}
           >
             stack
@@ -134,4 +128,4 @@ const ProjectsNeurify = () => {
   );
 };
 
-export default ProjectsNeurify;
+export default ProjectsFS;

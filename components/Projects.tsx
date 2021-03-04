@@ -4,6 +4,8 @@ import gsap from "gsap";
 import ProjectsNormal from "./ProjectsNormal";
 import ProjectsNeurify from "./ProjectsNeurify";
 import ProjectsTapFlash from "./ProjectsTapFlash";
+import ProjectsMore from "./ProjectsMore";
+import ProjectsFS from "./ProjectsFS";
 
 const Projects = () => {
   const [activeProject, setActiveProject] = useState(-1);
@@ -65,6 +67,8 @@ const Projects = () => {
         {delayed === -1 && <ProjectsNormal />}
         {delayed === 0 && <ProjectsNeurify />}
         {delayed === 1 && <ProjectsTapFlash />}
+        {delayed === 2 && <ProjectsFS />}
+        {delayed === 3 && <ProjectsMore />}
         <div className="navigation">
           <div>
             <h1
