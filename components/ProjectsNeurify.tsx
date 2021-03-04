@@ -1,27 +1,129 @@
-import React from "react";
-import Link from "next/link";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import gsap from "gsap";
 
 const ProjectsNeurify = () => {
+  let extraRefs = useRef<Array<HTMLHeadingElement>>([null]);
+  let contRef = useRef<HTMLDivElement>(null);
+  let tempRef = useRef<GSAPTween>(null);
+  let lineRef = useRef<HTMLDivElement>(null);
+  let viewRef = useRef<HTMLHeadingElement>(null);
+  let stackRef = useRef<HTMLDivElement>(null);
+  let subtitleRef = useRef<HTMLDivElement>(null);
+
+  let [viewText, setViewText] = useState("");
+
+  const showExtras = () => {
+    extraRefs.current.forEach((ref, index) => {
+      tempRef.current = gsap.to(ref, {
+        color: "#075985",
+        duration: 1 + index / 10,
+      });
+    });
+
+    tempRef.current = gsap.to(lineRef.current, {
+      top: viewRef.current.offsetTop + viewRef.current.clientHeight,
+      left: viewRef.current.offsetLeft,
+      duration: 0,
+    });
+
+    tempRef.current = gsap.to(lineRef.current, { width: "90%" });
+
+    setViewText(":");
+  };
+
+  const hideExtras = () => {
+    extraRefs.current.forEach((ref, index) => {
+      tempRef.current = gsap.to(ref, {
+        color: "transparent",
+        duration: 1 + index / 10,
+      });
+    });
+
+    tempRef.current = gsap.to(lineRef.current, { width: "0%" });
+
+    setViewText("");
+  };
+
+  const showStack = () => {
+    tempRef.current = gsap.to(stackRef.current, {
+      left: subtitleRef.current.offsetLeft,
+      duration: 0,
+    });
+
+    tempRef.current = gsap.to(subtitleRef.current, { opacity: 0 });
+
+    tempRef.current = gsap.to(stackRef.current, {
+      opacity: 1,
+    });
+  };
+
+  const hideStack = () => {
+    tempRef.current = gsap.to(subtitleRef.current, { opacity: 1 });
+    tempRef.current = gsap.to(stackRef.current, { opacity: 0 });
+  };
+
+  const extraLinkIntro = (index: number) => {
+    tempRef.current = gsap.to(extraRefs.current[index], {
+      color: "rgb(88, 28, 135)",
+      duration: 0.5,
+    });
+  };
+  const extraLinkOutro = (index: number) => {
+    tempRef.current = gsap.to(extraRefs.current[index], {
+      color: "#075985",
+      duration: 0.5,
+    });
+  };
+
   return (
-    <div className="content section-grid">
+    <div className="content section-grid neurify">
       <h1 className="title">neurify</h1>
-      <Image
+      <img
         src="/neurifylogotrans.png"
-        width={250}
-        height={250}
-        className="logo"
+        className="image"
+        width={100}
+        height={100}
       />
-      <div className="subtitle">
-        <h1>neurify is a digital marketing agency.</h1>
-        <h1>Created using Wordpress and Elementor.</h1>
+      <div className="stack" ref={stackRef}>
+        <h1>Wordpress</h1>
+        <h1>Elementor</h1>
+        <h1>javascript</h1>
+        <h1>jQuery</h1>
       </div>
-      <div className="extra">
-        <Link href={"https://www.neurify.co.uk"}>
-          <h1>
-            <a>Live Build</a>
+      <div className="subtitle" ref={subtitleRef}>
+        <h1>Integrating Technology With Marketing.</h1>
+      </div>
+      <div
+        className="extra"
+        ref={contRef}
+        onMouseEnter={() => showExtras()}
+        onMouseLeave={() => hideExtras()}
+      >
+        <h1 ref={viewRef}>View{viewText}</h1>
+        <div className="view-elements">
+          <h1
+            ref={(el) => (extraRefs.current[0] = el)}
+            onMouseEnter={() => extraLinkIntro(0)}
+            onMouseLeave={() => extraLinkOutro(0)}
+          >
+            live
           </h1>
-        </Link>
+          <h1
+            ref={(el) => (extraRefs.current[1] = el)}
+            onMouseEnter={() => {
+              showStack();
+              extraLinkIntro(1);
+            }}
+            onMouseLeave={() => {
+              hideStack();
+              extraLinkOutro(1);
+            }}
+          >
+            stack
+          </h1>
+        </div>
+        <div className="line" ref={lineRef}></div>
       </div>
     </div>
   );

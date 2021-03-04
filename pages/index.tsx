@@ -42,31 +42,31 @@ const particleParams = {
   },
 };
 
+let initial = true;
 export default function Home() {
   const [pressedSection, setPressedSection] = useState<number>(0);
   const [delayed, setDelayed] = useState<number>(0);
-
-  let prevState = 0;
 
   let contRef = useRef<HTMLDivElement>(null);
   let tempRef = useRef<GSAPTween>(null);
 
   useEffect(() => {
-    tempRef.current = gsap.to(contRef.current, {
-      // y: contRef.current.clientHeight,
-      opacity: 0,
-      duration: 0.5,
-    });
+    if (!initial) {
+      tempRef.current = gsap.to(contRef.current, {
+        opacity: 0,
+        duration: 0.5,
+      });
+    }
 
     const timeout = setTimeout(() => {
       tempRef.current = gsap.to(contRef.current, {
-        // y: 0,
         opacity: 1,
         duration: 0.5,
       });
       setDelayed(pressedSection);
     }, 500);
 
+    initial = false;
     return () => clearTimeout(timeout);
   }, [pressedSection]);
 

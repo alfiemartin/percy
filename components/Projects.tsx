@@ -8,6 +8,7 @@ import ProjectsTapFlash from "./ProjectsTapFlash";
 const Projects = () => {
   const [activeProject, setActiveProject] = useState(-1);
   const [hoveredProject, setHoveredProject] = useState(-1);
+  const [delayed, setDelayed] = useState<number>(-1);
 
   let navLinkRefs = useRef<Array<HTMLHeadingElement>>([null]);
   let contRef = useRef<HTMLDivElement>(null);
@@ -39,6 +40,7 @@ const Projects = () => {
       tempRef.current = gsap.to(ref, {
         color: "#dbeafe",
         textDecoration: "none",
+        duration: 0.5,
       });
     });
 
@@ -47,15 +49,22 @@ const Projects = () => {
     tempRef.current = gsap.to(navLinkRefs.current[activeProject], {
       color: "#581c87",
       textDecoration: "underline",
+      duration: 0.5,
     });
+
+    const timeout = setTimeout(() => {
+      setDelayed(activeProject);
+    }, 0);
+
+    return () => clearTimeout(timeout);
   }, [activeProject]);
 
   return (
     <div className="PROJECTS SECTION">
       <div className="section-wrapper" ref={contRef}>
-        {/* <ProjectsNormal /> */}
-        {/* <ProjectsNeurify /> */}
-        <ProjectsTapFlash />
+        {delayed === -1 && <ProjectsNormal />}
+        {delayed === 0 && <ProjectsNeurify />}
+        {delayed === 1 && <ProjectsTapFlash />}
         <div className="navigation">
           <div>
             <h1
