@@ -35,27 +35,33 @@ const Welcome = () => {
           Alfie Martin
         </h1>
         <div className="subtitle">
-          <h1>Electronic Engineer.</h1>
-          <h1>Web Developer.</h1>
-        </div>
-        <div
-          ref={imageRef}
-          className="image"
-          style={{
-            opacity: 0,
-            transform: "translate3d(0px, 0px, -300px)",
-          }}
-        >
-          <Image
-            src="/alfie-head1.JPG"
-            alt="email icon"
-            className="alfie-head"
-            height={600}
-            width={500}
-            priority={true}
-            quality={100}
-            objectFit="contain"
-          />
+          <div className="top">
+            <h1>Electronic</h1>
+            <h1>⠀Engineer.</h1>
+          </div>
+          <div className="bottom">
+            <h1>Web</h1>
+            <h1>⠀Developer.</h1>
+          </div>
+          <div
+            ref={imageRef}
+            className="image"
+            style={{
+              opacity: 0,
+              transform: "translate3d(0px, 0px, -300px)",
+            }}
+          >
+            <Image
+              src="/alfie-head1.JPG"
+              alt="email icon"
+              className="alfie-head"
+              height={600}
+              width={500}
+              priority={true}
+              quality={100}
+              objectFit="contain"
+            />
+          </div>
         </div>
       </div>
     </div>

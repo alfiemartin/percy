@@ -5,13 +5,9 @@ import ProjectsNormal from "./ProjectsNormal";
 import ProjectsNeurify from "./ProjectsNeurify";
 import ProjectsTapFlash from "./ProjectsTapFlash";
 
-let initial = true;
 const Projects = () => {
   const [activeProject, setActiveProject] = useState(-1);
   const [hoveredProject, setHoveredProject] = useState(-1);
-  const [revealTitleText, setRevealTitleText] = useState("");
-  const [revealBodyText, setRevealBodyText] = useState("");
-  const [revealLiveLink, setRevealLiveLink] = useState("");
 
   let navLinkRefs = useRef<Array<HTMLHeadingElement>>([null]);
   let contRef = useRef<HTMLDivElement>(null);
@@ -23,6 +19,8 @@ const Projects = () => {
   };
 
   useEffect(() => {
+    if (hoveredProject === -1) return;
+
     navLinkRefs.current.forEach((ref) => {
       tempRef.current = gsap.to(ref, { color: "#dbeafe" });
     });

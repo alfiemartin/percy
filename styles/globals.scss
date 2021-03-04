@@ -92,7 +92,8 @@ body {
   .subtitle {
     z-index: 1;
 
-    & > h1 {
+    & > h1,
+    & > div > h1 {
       font-size: 6rem;
       color: #075985;
       line-height: 2rem;
@@ -261,12 +262,43 @@ body {
     grid-column: span 3 / span 3;
   }
 
+  .top {
+    display: flex;
+    flex-direction: row;
+    margin-left: 10rem;
+    & > h1 {
+      margin-left: 0;
+      z-index: 4;
+    }
+
+    & > h1:last-child {
+      z-index: 6;
+    }
+  }
+
+  .bottom {
+    display: flex;
+    flex-direction: row;
+    margin-left: 10rem;
+    & > h1 {
+      margin-left: 0;
+      z-index: 6;
+    }
+
+    & > h1:last-child {
+      z-index: 4;
+    }
+  }
+
   .title {
     grid-column: span 3 / span 3;
   }
 
   .image {
     position: absolute;
+    top: 200px;
+    pointer-events: none;
+    z-index: 5;
   }
 }
 

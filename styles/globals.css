@@ -103,7 +103,8 @@ body {
   z-index: 1;
 }
 
-.section-grid .subtitle > h1 {
+.section-grid .subtitle > h1,
+.section-grid .subtitle > div > h1 {
   font-size: 6rem;
   color: #075985;
   line-height: 2rem;
@@ -292,12 +293,55 @@ body {
   grid-column: span 3 / span 3;
 }
 
+.WELCOME .top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-left: 10rem;
+}
+
+.WELCOME .top > h1 {
+  margin-left: 0;
+  z-index: 4;
+}
+
+.WELCOME .top > h1:last-child {
+  z-index: 6;
+}
+
+.WELCOME .bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-left: 10rem;
+}
+
+.WELCOME .bottom > h1 {
+  margin-left: 0;
+  z-index: 6;
+}
+
+.WELCOME .bottom > h1:last-child {
+  z-index: 4;
+}
+
 .WELCOME .title {
   grid-column: span 3 / span 3;
 }
 
 .WELCOME .image {
   position: absolute;
+  top: 200px;
+  pointer-events: none;
+  z-index: 5;
 }
 
 .RESUME .subtitle {
