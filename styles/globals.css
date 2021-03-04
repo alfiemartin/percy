@@ -339,9 +339,12 @@ body {
 
 .WELCOME .image {
   position: absolute;
-  top: 200px;
+  top: 30%;
   pointer-events: none;
   z-index: 5;
+  width: 40%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .RESUME .subtitle {

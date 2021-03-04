@@ -87,7 +87,6 @@ const ProjectsTapFlash = () => {
       </div>
       <div className="subtitle" ref={subtitleRef}>
         <h1>A simple game based on memory.</h1>
-        <h1>Created using React and Firebase.</h1>
       </div>
       <div
         className="extra"

@@ -19,16 +19,36 @@ const Projects = () => {
   };
 
   useEffect(() => {
-    if (hoveredProject === -1) return;
+    for (let i = 0; i < navLinkRefs.current.length; i++) {
+      if (i === activeProject) continue;
 
-    navLinkRefs.current.forEach((ref) => {
-      tempRef.current = gsap.to(ref, { color: "#dbeafe" });
-    });
+      tempRef.current = gsap.to(navLinkRefs.current[i], {
+        color: "#dbeafe",
+      });
+    }
+
+    if (hoveredProject === -1) return;
 
     tempRef.current = gsap.to(navLinkRefs.current[hoveredProject], {
       color: "#581c87",
     });
   }, [hoveredProject]);
+
+  useEffect(() => {
+    navLinkRefs.current.forEach((ref) => {
+      tempRef.current = gsap.to(ref, {
+        color: "#dbeafe",
+        textDecoration: "none",
+      });
+    });
+
+    if (activeProject === -1) return;
+
+    tempRef.current = gsap.to(navLinkRefs.current[activeProject], {
+      color: "#581c87",
+      textDecoration: "underline",
+    });
+  }, [activeProject]);
 
   return (
     <div className="PROJECTS SECTION">

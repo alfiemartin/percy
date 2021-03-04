@@ -37,11 +37,11 @@ const Welcome = () => {
         <div className="subtitle">
           <div className="top">
             <h1>Electronic</h1>
-            <h1>⠀Engineer.</h1>
+            <h1>&nbsp;Engineer.</h1>
           </div>
           <div className="bottom">
             <h1>Web</h1>
-            <h1>⠀Developer.</h1>
+            <h1>&nbsp;Developer.</h1>
           </div>
           <div
             ref={imageRef}
@@ -55,11 +55,11 @@ const Welcome = () => {
               src="/alfie-head1.JPG"
               alt="email icon"
               className="alfie-head"
-              height={600}
-              width={500}
+              height={300}
+              width={447}
               priority={true}
               quality={100}
-              objectFit="contain"
+              layout="responsive"
             />
           </div>
         </div>
