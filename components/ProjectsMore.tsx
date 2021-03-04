@@ -49,14 +49,14 @@ const ProjectsMore = () => {
           </div>
         </div>
         <div className="more-projects-list">
-          <h1>RDM Technology</h1>
+          <h1>nice and chill</h1>
           <div>
             <h1>Live</h1>
             <h1>Code</h1>
           </div>
         </div>
         <div className="more-projects-list">
-          <h1>RDM Technology</h1>
+          <h1>Alba mind</h1>
           <div>
             <h1>Live</h1>
             <h1>Code</h1>

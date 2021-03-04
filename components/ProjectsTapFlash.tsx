@@ -76,7 +76,7 @@ const ProjectsTapFlash = () => {
   };
 
   return (
-    <div className="content section-grid">
+    <div className="content section-grid tapflash">
       <h1 className="title">TapFlash</h1>
       <div className="stack" ref={stackRef}>
         <h1>react</h1>

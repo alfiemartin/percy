@@ -7,10 +7,14 @@ import ProjectsTapFlash from "./ProjectsTapFlash";
 import ProjectsMore from "./ProjectsMore";
 import ProjectsFS from "./ProjectsFS";
 
+let initial = true;
+
 const Projects = () => {
   const [activeProject, setActiveProject] = useState(-1);
   const [hoveredProject, setHoveredProject] = useState(-1);
   const [delayed, setDelayed] = useState<number>(-1);
+
+  const [compWillUnmount, setCompWillUnmount] = useState(false);
 
   let navLinkRefs = useRef<Array<HTMLHeadingElement>>([null]);
   let contRef = useRef<HTMLDivElement>(null);
@@ -46,29 +50,27 @@ const Projects = () => {
       });
     });
 
-    if (activeProject === -1) return;
-
     tempRef.current = gsap.to(navLinkRefs.current[activeProject], {
       color: "#581c87",
       textDecoration: "underline",
       duration: 0.5,
     });
 
-    const timeout = setTimeout(() => {
-      setDelayed(activeProject);
-    }, 0);
+    setDelayed(activeProject);
 
-    return () => clearTimeout(timeout);
+    // return () => clearTimeout(timeout);
   }, [activeProject]);
 
   return (
     <div className="PROJECTS SECTION">
-      <div className="section-wrapper" ref={contRef}>
-        {delayed === -1 && <ProjectsNormal />}
-        {delayed === 0 && <ProjectsNeurify />}
-        {delayed === 1 && <ProjectsTapFlash />}
-        {delayed === 2 && <ProjectsFS />}
-        {delayed === 3 && <ProjectsMore />}
+      <div className="section-wrapper">
+        <div className="fix" ref={contRef}>
+          {delayed === -1 && <ProjectsNormal />}
+          {delayed === 0 && <ProjectsNeurify />}
+          {delayed === 1 && <ProjectsTapFlash />}
+          {delayed === 2 && <ProjectsFS />}
+          {delayed === 3 && <ProjectsMore />}
+        </div>
         <div className="navigation">
           <div>
             <h1

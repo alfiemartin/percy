@@ -78,11 +78,12 @@ const ProjectsNeurify = () => {
 
   useEffect(() => {
     console.log("hello");
+
     return () => console.log("bye");
   }, []);
 
   return (
-    <div className="content section-grid neurify">
+    <div className="content section-grid neurify" ref={contRef}>
       <h1 className="title">neurify</h1>
       <img
         src="/neurifylogotrans.png"
@@ -101,7 +102,6 @@ const ProjectsNeurify = () => {
       </div>
       <div
         className="extra"
-        ref={contRef}
         onMouseEnter={() => showExtras()}
         onMouseLeave={() => hideExtras()}
       >

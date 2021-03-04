@@ -84,7 +84,7 @@ const ProjectsFS = () => {
         <h1>TailwindCSS</h1>
       </div>
       <div className="subtitle" ref={subtitleRef}>
-        <h1>A simple game based on memory.</h1>
+        <h1>A full stack project.</h1>
       </div>
       <div
         className="extra"
