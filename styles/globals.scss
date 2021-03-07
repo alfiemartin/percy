@@ -6,8 +6,15 @@ body {
   padding: 0;
   margin: 0;
   background: #3f464f;
-  font-size: 11px;
+  font-size: 12px;
   overflow: hidden;
+}
+
+@media only screen and (min-width: 1300px) {
+  html,
+  body {
+    font-size: 11px;
+  }
 }
 
 @media only screen and (min-width: 1500px) {
@@ -147,7 +154,7 @@ body {
 
   .fix {
     height: calc(90% - 2rem);
-    overflow: hidden;
+    // overflow: hidden;
     z-index: 10;
   }
 
@@ -177,6 +184,7 @@ body {
       color: #dbeafe;
       display: inline;
       cursor: pointer;
+      user-select: none;
     }
   }
 

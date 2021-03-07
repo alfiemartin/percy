@@ -81,19 +81,17 @@ export default function Home() {
         <SideBar setPressedSection={setPressedSection} />
         <div className="SECTION-WRAPPER">
           <Particles
-            style={{
-              width: "100%",
-              height: "100%",
-              position: "absolute",
-              top: "0",
-              left: "0",
-              zIndex: "0",
-            }}
+            style={{ width: "100%", height: "100%" }}
             params={particleParams as any}
           />
           <div
             ref={contRef}
-            style={{ width: "100%", height: "100%" }}
+            style={{
+              width: "100%",
+              height: "100%",
+              position: "absolute",
+              top: 0,
+            }}
           >
             {delayed === 0 && <Welcome />}
             {delayed === 1 && <Projects />}

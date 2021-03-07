@@ -7,6 +7,10 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+
+  transition: width 1s ease;
+
+  position: relative;
 }
 
 .linkWrapper {
@@ -21,10 +25,18 @@
 
 .link {
   cursor: pointer;
+  user-select: none;
 }
 
-@media only screen and (max-width: 1000px) {
+.toggle-button {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  text-align: center;
+}
+
+@media only screen and (max-width: 1500px) {
   .sidebar {
-    width: 5%;
+    width: 80px;
   }
 }

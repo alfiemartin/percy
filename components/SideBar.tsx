@@ -8,6 +8,7 @@ const animDuration = 0.7;
 const SideBar = ({ setPressedSection }) => {
   let linkRefs = useRef([null]);
   let tempRef = useRef(null);
+  let sidebarRef = useRef<HTMLDivElement>(null);
 
   const [hoveredLink, setHoveredlink] = useState(-1);
   const [pressedLink, setPressedLink] = useState(0);
@@ -48,8 +49,23 @@ const SideBar = ({ setPressedSection }) => {
     });
   }, [pressedLink]);
 
+  const toggleSidebar = () => {
+    if (sidebarRef.current.clientWidth === 80) {
+      tempRef.current = gsap.to(sidebarRef.current, {
+        css: { width: "min(25%, 450px)" },
+      });
+    } else {
+      tempRef.current = gsap.to(sidebarRef.current, {
+        css: { width: "80px" },
+      });
+    }
+  };
+
   return (
-    <div className="sidebar">
+    <div className="sidebar" ref={sidebarRef}>
+      <h1 className="link toggle-button" onClick={toggleSidebar}>
+        X
+      </h1>
       <div className="linkWrapper">
         <h1
           className="link"
