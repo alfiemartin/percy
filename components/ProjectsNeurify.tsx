@@ -105,12 +105,6 @@ const ProjectsNeurify = ({ active }: PropType) => {
       style={{ opacity: 0 }}
     >
       <h1 className="title">neurify</h1>
-      <img
-        src="/neurifylogotrans.png"
-        className="image"
-        width={100}
-        height={100}
-      />
       <div className="stack" ref={stackRef}>
         <h1>Wordpress</h1>
         <h1>Elementor</h1>
