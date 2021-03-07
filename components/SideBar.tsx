@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useRef, useState } from "react";
-import sidebarStyles from "../styles/Sidebar.module.css";
+// import sidebarStyles from "../styles/Sidebar.module.css";
 import gsap from "gsap";
 
 const animDuration = 0.7;
@@ -49,10 +49,10 @@ const SideBar = ({ setPressedSection }) => {
   }, [pressedLink]);
 
   return (
-    <div className={sidebarStyles.sidebar}>
-      <div className={sidebarStyles.linkWrapper}>
+    <div className="sidebar">
+      <div className="linkWrapper">
         <h1
-          className={sidebarStyles.link}
+          className="link"
           onMouseOver={() => setHoveredlink(0)}
           onMouseDown={() => setPressedLink(0)}
           onMouseLeave={() => setHoveredlink(-1)}
@@ -61,7 +61,7 @@ const SideBar = ({ setPressedSection }) => {
           Home
         </h1>
         <h1
-          className={sidebarStyles.link}
+          className="link"
           onMouseOver={() => setHoveredlink(1)}
           onMouseDown={() => setPressedLink(1)}
           onMouseLeave={() => setHoveredlink(-1)}
@@ -70,7 +70,7 @@ const SideBar = ({ setPressedSection }) => {
           Projects
         </h1>
         <h1
-          className={sidebarStyles.link}
+          className="link"
           onMouseOver={() => setHoveredlink(2)}
           onMouseDown={() => setPressedLink(2)}
           onMouseLeave={() => setHoveredlink(-1)}
@@ -79,7 +79,7 @@ const SideBar = ({ setPressedSection }) => {
           Contact
         </h1>
         <h1
-          className={sidebarStyles.link}
+          className="link"
           onMouseOver={() => setHoveredlink(3)}
           onMouseDown={() => setPressedLink(3)}
           onMouseLeave={() => setHoveredlink(-1)}

@@ -1,7 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 
-const ProjectsTapFlash = () => {
+interface PropType {
+  active: boolean;
+}
+
+const ProjectsTapFlash = ({ active }: PropType) => {
   let extraRefs = useRef<Array<HTMLHeadingElement>>([null]);
   let contRef = useRef<HTMLDivElement>(null);
   let tempRef = useRef<GSAPTween>(null);
@@ -75,8 +79,30 @@ const ProjectsTapFlash = () => {
     });
   };
 
+  //leave animation
+  useEffect(() => {
+    if (active) return;
+
+    tempRef.current = gsap.to(contRef.current, {
+      opacity: 0,
+      duration: 1,
+    });
+  }, [active]);
+
+  //appearance animation
+  useEffect(() => {
+    tempRef.current = gsap.to(contRef.current, {
+      opacity: 1,
+      duration: 1,
+    });
+  }, []);
+
   return (
-    <div className="content section-grid tapflash">
+    <div
+      className="content section-grid tapflash"
+      ref={contRef}
+      style={{ opacity: 0 }}
+    >
       <h1 className="title">TapFlash</h1>
       <div className="stack" ref={stackRef}>
         <h1>react</h1>
@@ -88,7 +114,6 @@ const ProjectsTapFlash = () => {
       </div>
       <div
         className="extra"
-        ref={contRef}
         onMouseEnter={() => showExtras()}
         onMouseLeave={() => hideExtras()}
       >

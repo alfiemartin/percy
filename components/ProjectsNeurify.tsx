@@ -2,7 +2,11 @@ import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 
-const ProjectsNeurify = () => {
+interface PropType {
+  active: boolean;
+}
+
+const ProjectsNeurify = ({ active }: PropType) => {
   let extraRefs = useRef<Array<HTMLHeadingElement>>([null]);
   let contRef = useRef<HTMLDivElement>(null);
   let tempRef = useRef<GSAPTween>(null);
@@ -76,14 +80,30 @@ const ProjectsNeurify = () => {
     });
   };
 
+  //leave animation
   useEffect(() => {
-    console.log("hello");
+    if (active) return;
 
-    return () => console.log("bye");
+    tempRef.current = gsap.to(contRef.current, {
+      opacity: 0,
+      duration: 1,
+    });
+  }, [active]);
+
+  //appearance animation
+  useEffect(() => {
+    tempRef.current = gsap.to(contRef.current, {
+      opacity: 1,
+      duration: 1,
+    });
   }, []);
 
   return (
-    <div className="content section-grid neurify" ref={contRef}>
+    <div
+      className="content section-grid neurify"
+      ref={contRef}
+      style={{ opacity: 0 }}
+    >
       <h1 className="title">neurify</h1>
       <img
         src="/neurifylogotrans.png"

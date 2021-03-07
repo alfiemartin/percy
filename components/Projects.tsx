@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import Link from "next/link";
 import gsap from "gsap";
 import ProjectsNormal from "./ProjectsNormal";
 import ProjectsNeurify from "./ProjectsNeurify";
@@ -7,14 +6,10 @@ import ProjectsTapFlash from "./ProjectsTapFlash";
 import ProjectsMore from "./ProjectsMore";
 import ProjectsFS from "./ProjectsFS";
 
-let initial = true;
-
 const Projects = () => {
   const [activeProject, setActiveProject] = useState(-1);
   const [hoveredProject, setHoveredProject] = useState(-1);
   const [delayed, setDelayed] = useState<number>(-1);
-
-  const [compWillUnmount, setCompWillUnmount] = useState(false);
 
   let navLinkRefs = useRef<Array<HTMLHeadingElement>>([null]);
   let contRef = useRef<HTMLDivElement>(null);
@@ -56,20 +51,40 @@ const Projects = () => {
       duration: 0.5,
     });
 
-    setDelayed(activeProject);
+    const timeout = setTimeout(() => {
+      setDelayed(activeProject);
+    }, 1000);
 
-    // return () => clearTimeout(timeout);
+    return () => clearTimeout(timeout);
   }, [activeProject]);
 
   return (
     <div className="PROJECTS SECTION">
       <div className="section-wrapper">
         <div className="fix" ref={contRef}>
-          {delayed === -1 && <ProjectsNormal />}
-          {delayed === 0 && <ProjectsNeurify />}
-          {delayed === 1 && <ProjectsTapFlash />}
-          {delayed === 2 && <ProjectsFS />}
-          {delayed === 3 && <ProjectsMore />}
+          {delayed === -1 && (
+            <ProjectsNormal
+              active={activeProject === -1 ? true : false}
+            />
+          )}
+          {delayed === 0 && (
+            <ProjectsNeurify
+              active={activeProject === 0 ? true : false}
+            />
+          )}
+          {delayed === 1 && (
+            <ProjectsTapFlash
+              active={activeProject === 1 ? true : false}
+            />
+          )}
+          {delayed === 2 && (
+            <ProjectsFS active={activeProject === 2 ? true : false} />
+          )}
+          {delayed === 3 && (
+            <ProjectsMore
+              active={activeProject === 3 ? true : false}
+            />
+          )}
         </div>
         <div className="navigation">
           <div>
