@@ -172,7 +172,7 @@ body {
     grid-row-start: 3;
     grid-column: span 3 / span 3;
 
-    height: 10%;
+    height: calc(10% + 2rem);
 
     border-radius: 5px;
     border-bottom: 2px solid #075985;

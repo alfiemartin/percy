@@ -54,9 +54,17 @@ const SideBar = ({ setPressedSection }) => {
       tempRef.current = gsap.to(sidebarRef.current, {
         css: { width: "min(25%, 450px)" },
       });
+
+      linkRefs.current.forEach((link) => {
+        tempRef.current = gsap.to(link, { opacity: 1 });
+      });
     } else {
       tempRef.current = gsap.to(sidebarRef.current, {
         css: { width: "80px" },
+      });
+
+      linkRefs.current.forEach((link) => {
+        tempRef.current = gsap.to(link, { opacity: 0 });
       });
     }
   };

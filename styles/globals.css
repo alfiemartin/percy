@@ -13,7 +13,7 @@ body {
 @media only screen and (min-width: 1300px) {
   html,
   body {
-    font-size: 11px;
+    font-size: 8px;
   }
 }
 
@@ -189,7 +189,7 @@ body {
   -ms-grid-row: 3;
       grid-row-start: 3;
   grid-column: span 3 / span 3;
-  height: 10%;
+  height: calc(10% + 2rem);
   border-radius: 5px;
   border-bottom: 2px solid #075985;
 }
