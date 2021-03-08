@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 
 const Contact = () => {
   return (
@@ -8,46 +7,38 @@ const Contact = () => {
         <h1 className="title">Contact Me</h1>
         <div className="contact-section">
           <div className="contact-item">
-            <Image
+            <img
               src="/email.svg"
               alt="email icon"
               width={50}
               height={50}
-              priority={true}
-              quality={50}
             />
             <h1>alfie.martin@hotmail.co.uk</h1>
           </div>
           <div className="contact-item">
-            <Image
+            <img
               src="/phone-call.svg"
               alt="email icon"
               width={50}
               height={50}
-              priority={true}
-              quality={50}
             />
             <h1>+447528559068</h1>
           </div>
           <div className="contact-item">
-            <Image
+            <img
               src="/linkedin.svg"
               alt="email icon"
               width={50}
               height={50}
-              priority={true}
-              quality={50}
             />
             <h1>LinkedIn</h1>
           </div>
           <div className="contact-item">
-            <Image
+            <img
               src="/github.svg"
               alt="email icon"
               width={50}
               height={50}
-              priority={true}
-              quality={50}
             />
             <h1>github</h1>
           </div>
