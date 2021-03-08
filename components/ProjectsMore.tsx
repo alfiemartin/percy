@@ -58,7 +58,7 @@ const ProjectsMore = ({ active }: PropType) => {
           </div>
         </div>
         <div className="more-projects-list">
-          <h1>RDM Technology</h1>
+          <h1>Messaging App</h1>
           <div>
             <h1>Live</h1>
             <h1>Code</h1>

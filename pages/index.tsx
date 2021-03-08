@@ -99,6 +99,9 @@ export default function Home() {
             {delayed === 3 && <Resume />}
           </div>
         </div>
+        <div className="mobile-banner">
+          <h1>Mobile Site Coming Soon!</h1>
+        </div>
       </main>
 
       <footer></footer>
