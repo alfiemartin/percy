@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const Resume = () => {
@@ -6,8 +7,9 @@ const Resume = () => {
       <div className="section-grid">
         <h1 className="title">Résumé</h1>
         <div className="subtitle">
-          <h1>View as pdf.</h1>
-          {/* <h1>Web Developer.</h1> */}
+          <Link href="/Resume.pdf">
+            <h1 style={{ cursor: "pointer" }}>View as pdf.</h1>
+          </Link>
         </div>
       </div>
     </div>
