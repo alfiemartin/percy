@@ -123,6 +123,12 @@ const ProjectsTapFlash = ({ active }: PropType) => {
             ref={(el) => (extraRefs.current[0] = el)}
             onMouseEnter={() => extraLinkIntro(0)}
             onMouseLeave={() => extraLinkOutro(0)}
+            onClick={() =>
+              window.open(
+                "https://github.com/alfiemartin/TapFlash",
+                "_blank"
+              )
+            }
           >
             code
           </h1>
@@ -130,6 +136,9 @@ const ProjectsTapFlash = ({ active }: PropType) => {
             ref={(el) => (extraRefs.current[1] = el)}
             onMouseEnter={() => extraLinkIntro(1)}
             onMouseLeave={() => extraLinkOutro(1)}
+            onClick={() =>
+              window.open("https://tapflash-77edb.web.app/", "_blank")
+            }
           >
             live
           </h1>

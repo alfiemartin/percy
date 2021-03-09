@@ -39,29 +39,83 @@ const ProjectsMore = ({ active }: PropType) => {
         <div className="more-projects-list">
           <h1>RDM Technology</h1>
           <div>
-            <h1>Live</h1>
-            <h1>Code</h1>
+            <h1
+              onClick={() =>
+                window.open("https://www.rdmtechnology.com", "_blank")
+              }
+            >
+              Live
+            </h1>
+            <h1
+              onClick={() =>
+                window.open(
+                  "https://github.com/alfiemartin/RDM-Technology",
+                  "_blank"
+                )
+              }
+            >
+              Code
+            </h1>
           </div>
         </div>
         <div className="more-projects-list">
           <h1>nice and chill</h1>
           <div>
-            <h1>Live</h1>
-            <h1>Code</h1>
+            <h1
+              onClick={() =>
+                window.open("https://www.niceandchill.com", "_blank")
+              }
+            >
+              Live
+            </h1>
+            <h1 style={{ visibility: "hidden" }}>Code</h1>
           </div>
         </div>
         <div className="more-projects-list">
           <h1>Alba mind</h1>
           <div>
-            <h1>Live</h1>
-            <h1>Code</h1>
+            <h1
+              onClick={() =>
+                window.open("https://socially-distant.me", "_blank")
+              }
+            >
+              Live
+            </h1>
+            <h1
+              onClick={() =>
+                window.open(
+                  "https://github.com/alfiemartin/antisocially-distant",
+                  "_blank"
+                )
+              }
+            >
+              Code
+            </h1>
           </div>
         </div>
         <div className="more-projects-list">
-          <h1>Messaging App</h1>
+          <h1>Chatroom App</h1>
           <div>
-            <h1>Live</h1>
-            <h1>Code</h1>
+            <h1
+              onClick={() =>
+                window.open(
+                  "https://chatroom-c36ed.web.app/",
+                  "_blank"
+                )
+              }
+            >
+              Live
+            </h1>
+            <h1
+              onClick={() =>
+                window.open(
+                  "https://github.com/alfiemartin/Basic-Messaging-App",
+                  "_blank"
+                )
+              }
+            >
+              Code
+            </h1>
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
+import Image from "next/image";
 
 const Welcome = () => {
   let imageRef = useRef(null);
@@ -50,12 +51,15 @@ const Welcome = () => {
               transform: "translate3d(0px, 0px, -300px)",
             }}
           >
-            <img
+            <Image
               src="/alfie-head1.JPG"
               alt="email icon"
               className="alfie-head"
               height={300}
               width={447}
+              priority={true}
+              quality={100}
+              layout="responsive"
             />
           </div>
         </div>

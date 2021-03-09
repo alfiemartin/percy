@@ -259,6 +259,15 @@ body {
   margin-right: 4rem;
   font-size: 3rem;
   line-height: 2rem;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.PROJECTS .stack .more-projects-list > div h1:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  color: #581c87;
 }
 
 .PROJECTS .stack > h1 {
@@ -363,6 +372,10 @@ body {
 
 .CONTACT .contact-section .contact-item h1::before {
   content: "⠀";
+}
+
+.CONTACT .contact-section .contact-item a {
+  text-decoration: none;
 }
 
 .CONTACT .contact-section {

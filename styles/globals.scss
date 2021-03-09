@@ -229,6 +229,12 @@ body {
           font-size: 3rem;
           line-height: 2rem;
           // color: white;
+          transition: all 0.3s ease;
+          cursor: pointer;
+          &:hover {
+            transform: scale(1.1);
+            color: #581c87;
+          }
         }
       }
     }
@@ -313,6 +319,10 @@ body {
         &::before {
           content: "⠀";
         }
+      }
+
+      a {
+        text-decoration: none;
       }
     }
   }

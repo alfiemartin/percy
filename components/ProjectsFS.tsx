@@ -110,7 +110,7 @@ const ProjectsFS = ({ active }: PropType) => {
         <h1>TailwindCSS</h1>
       </div>
       <div className="subtitle" ref={subtitleRef}>
-        <h1>A full stack project.</h1>
+        <h1>A full stack project... Coming soon.</h1>
       </div>
       <div
         className="extra"

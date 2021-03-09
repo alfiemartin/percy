@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import Link from "next/link";
 
 interface PropType {
   active: boolean;
@@ -124,9 +125,13 @@ const ProjectsNeurify = ({ active }: PropType) => {
             ref={(el) => (extraRefs.current[0] = el)}
             onMouseEnter={() => extraLinkIntro(0)}
             onMouseLeave={() => extraLinkOutro(0)}
+            onClick={() =>
+              window.open("https://www.neurify.co.uk", "_blank")
+            }
           >
-            live
+            <a>live</a>
           </h1>
+
           <h1
             ref={(el) => (extraRefs.current[1] = el)}
             onMouseEnter={() => {
