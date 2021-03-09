@@ -37,7 +37,7 @@
   text-align: center;
 }
 
-@media only screen and (max-width: 1500px) {
+/* @media only screen and (max-width: 1500px) {
   .sidebar {
     width: 80px;
   }
@@ -46,3 +46,5 @@
     opacity: 0;
   }
 }
+
+*/
