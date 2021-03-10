@@ -389,6 +389,16 @@ body {
   .subtitle {
     grid-row-start: 2;
     grid-column: span 3 / span 3;
+
+    .view-pdf {
+      cursor: pointer;
+      transition: all 0.3s ease;
+      transform-origin: left;
+      &:hover {
+        color: #581c87;
+        transform: scale(1.1);
+      }
+    }
   }
 
   .title {

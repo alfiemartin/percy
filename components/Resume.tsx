@@ -8,7 +8,7 @@ const Resume = () => {
         <h1 className="title">Résumé</h1>
         <div className="subtitle">
           <Link href="/Resume.pdf">
-            <h1 style={{ cursor: "pointer" }}>View as pdf.</h1>
+            <h1 className="view-pdf">View as pdf.</h1>
           </Link>
         </div>
       </div>

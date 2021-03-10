@@ -454,6 +454,20 @@ body {
   grid-column: span 3 / span 3;
 }
 
+.RESUME .subtitle .view-pdf {
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+}
+
+.RESUME .subtitle .view-pdf:hover {
+  color: #581c87;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
 .RESUME .title {
   grid-column: span 2 / span 2;
 }
