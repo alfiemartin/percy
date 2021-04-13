@@ -21,7 +21,7 @@ const Contact = () => {
           <div className="contact-item">
             <Image
               src="/phone-call.svg"
-              alt="email icon"
+              alt="phone icon"
               width={50}
               height={50}
               priority={true}
@@ -32,7 +32,7 @@ const Contact = () => {
           <div className="contact-item">
             <Image
               src="/linkedin.svg"
-              alt="email icon"
+              alt="linkedin icon"
               width={50}
               height={50}
               priority={true}
@@ -42,20 +42,24 @@ const Contact = () => {
               href="https://www.linkedin.com/in/alfie-martin99/"
               target="_blank"
             >
-              <h1 style={{ cursor: "pointer" }}>LinkedIn</h1>
+              <h1 className="linkedin" style={{ cursor: "pointer" }}>
+                LinkedIn
+              </h1>
             </a>
           </div>
           <div className="contact-item">
             <Image
               src="/github.svg"
-              alt="email icon"
+              alt="github icon"
               width={50}
               height={50}
               priority={true}
               quality={50}
             />
             <a href="https://github.com/alfiemartin/" target="_blank">
-              <h1 style={{ cursor: "pointer" }}>github</h1>
+              <h1 className="github" style={{ cursor: "pointer" }}>
+                github
+              </h1>
             </a>
           </div>
         </div>

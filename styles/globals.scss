@@ -185,6 +185,11 @@ body {
       display: inline;
       cursor: pointer;
       user-select: none;
+
+      transition: all 0.3 ease;
+      &:hover {
+        transform: scale(1.1);
+      }
     }
   }
 
@@ -231,10 +236,6 @@ body {
           // color: white;
           transition: all 0.3s ease;
           cursor: pointer;
-          &:hover {
-            transform: scale(1.1);
-            color: #581c87;
-          }
         }
       }
     }
@@ -318,6 +319,16 @@ body {
 
         &::before {
           content: "⠀";
+        }
+      }
+
+      .github,
+      .linkedin {
+        transition: all 0.3s ease;
+
+        &:hover {
+          color: #581c87;
+          transform: scale(1.1);
         }
       }
 

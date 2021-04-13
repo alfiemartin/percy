@@ -205,6 +205,13 @@ body {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+}
+
+.PROJECTS .navigation h1:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .PROJECTS .stack {
@@ -262,12 +269,6 @@ body {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   cursor: pointer;
-}
-
-.PROJECTS .stack .more-projects-list > div h1:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  color: #581c87;
 }
 
 .PROJECTS .stack > h1 {
@@ -372,6 +373,19 @@ body {
 
 .CONTACT .contact-section .contact-item h1::before {
   content: "⠀";
+}
+
+.CONTACT .contact-section .contact-item .github,
+.CONTACT .contact-section .contact-item .linkedin {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.CONTACT .contact-section .contact-item .github:hover,
+.CONTACT .contact-section .contact-item .linkedin:hover {
+  color: #581c87;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .CONTACT .contact-section .contact-item a {
