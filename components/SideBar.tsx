@@ -9,6 +9,7 @@ const SideBar = ({ setPressedSection }) => {
   let linkRefs = useRef([null]);
   let tempRef = useRef(null);
   let sidebarRef = useRef<HTMLDivElement>(null);
+  let toggleRef = useRef<HTMLHeadingElement>(null);
 
   const [hoveredLink, setHoveredlink] = useState(-1);
   const [pressedLink, setPressedLink] = useState(0);
@@ -55,12 +56,24 @@ const SideBar = ({ setPressedSection }) => {
         css: { width: "min(25%, 450px)" },
       });
 
+      tempRef.current = gsap.to(toggleRef.current, {
+        css: { textAlign: "right", marginRight: "1rem" },
+        delay: 1.5,
+        duration: 0,
+      });
+
       linkRefs.current.forEach((link) => {
         tempRef.current = gsap.to(link, { opacity: 1 });
       });
     } else {
       tempRef.current = gsap.to(sidebarRef.current, {
         css: { width: "80px" },
+      });
+
+      tempRef.current = gsap.to(toggleRef.current, {
+        css: { textAlign: "center", marginRight: "0" },
+        delay: 1.5,
+        duration: 0,
       });
 
       linkRefs.current.forEach((link) => {
@@ -71,7 +84,11 @@ const SideBar = ({ setPressedSection }) => {
 
   return (
     <div className="sidebar" ref={sidebarRef}>
-      <h1 className="link toggle-button" onClick={toggleSidebar}>
+      <h1
+        className="link toggle-button"
+        onClick={toggleSidebar}
+        ref={toggleRef}
+      >
         X
       </h1>
       <div className="linkWrapper">
